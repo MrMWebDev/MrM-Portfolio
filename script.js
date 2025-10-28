@@ -4,8 +4,8 @@ const webProjects = [
 ];
 
 const prints = [
-    { title: "Bookend Planter", img: "images/bookend planter.png" },
-    { title: "Custom Keychain", desc: "images/keychain.png" },
+    { title: "Bookend Planter", img: "images/bookend planter.jpeg" },
+    { title: "Custom Keychain", img: "images/keychain.jpg" },
 ];
 
 function displayProjects(section, items) {
@@ -22,3 +22,25 @@ function displayProjects(section, items) {
 
 displayProjects(".projects", webProjects);
 displayProjects(".prints", prints);
+
+// Animate cards on scroll
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    }); 
+});
+
+document.querySelectorAll('.card').forEach(card => {
+    observer.observe(card);
+});
+
+const searchInput = document.getElementById('search');
+searchInput.addElementListener('input', e => {
+    const term = e.target.value.toLowerCase();
+    document.querySelectoerAll('.projects .card').forEach(card => {
+        const match = card.textContent.toLowerCase().includes(term);
+        card.style.display = match ? 'block' : 'none';
+    });
+});

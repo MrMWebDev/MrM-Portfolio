@@ -1,22 +1,52 @@
+:root {
+    --accent: #23b14d;
+    --bg: #0f0f0f;
+    --text: #f2f2f2;
+    --card-bg: #1c1c1c;
+    --shadow: rbga(255, 122, 0, 0.3);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-size: system-ui, sans-serif;
+    font-size: "Poppins" system-ui, sans-serif;
     margin: 0;
-    background: #fafafa;
-    color: #222;
-    line-height: 1.6;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
 }
 
 header {
     text-align: center;
-    padding: 2em;
-    background: #222;
-    color: #fff;
+    padding: 4em 1em;
+    background: linear-gradient(135deg, var(--acent), #111);
+    box-shadow: 0 0 30px var(--shadow);
 }
 
 nav a {
     margin: 0 1em;
-    color: #ff9800;
+    color: white;
+    font-weight: 500;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+h2 {
+    border-left: 5px solid var(--accent);
+    padding-left: 10px;
+}
+
+#search {
+    align-self: center;
+    margin: 0 42%;
+    background-color: var(--card-bg);
+    color: var(--accent);
 }
 
 section {
@@ -25,20 +55,35 @@ section {
     margin: auto;
 }
 
-.projects, .prints {
+.projects,
+.prints {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5em;
 }
 
 .card {
-    background: white;
-    border-radius: 10px;
-    padding: 1em;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    /* transition: transform 0.4s ease, box-shadow 0.3s; */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    text-align: center;
 }
 
-card:hover {
-    transform: scale(1.02);
+.card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(-3deg);
+    box-shadow: 0 10px 25px var(--shadow);
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#contact {
+    text-align: center;
+    padding: 4em 1em;
 }
