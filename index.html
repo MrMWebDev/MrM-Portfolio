@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MrMWebDev | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <header>
-        <h1>Hola, I'm Mario Moreno aka MrMWebDev, aka MrM3DPrints</h1>
+        <img src="images/mrmwebdev.png" alt="MrMWebDev Logo" class="logo" />
+        <h1>👋 Hola, I'm Mario Moreno aka MrMWebDev & MrM3DPrints</h1>
         <p>Web Developer & 3D Printing Enthusiast</p>
         <nav>
             <a href="#webdev">Web Dev</a>
@@ -17,25 +20,37 @@
         </nav>
     </header>
 
-    <input type="text" id="search" placeholder="Search Projects..."/>
-
+    <!-- WEB DEV SECTION -->
     <section id="webdev">
-        <h2>Web Development Projects</h2>
-        <div class="projects"></div>
+        <h2>
+            <img src="images/mrmwebdev.png" alt="MrMWebDev Logo" class="section-logo" />
+            Web Development Projects
+        </h2>
+        <input type="text" id="search" placeholder="Search Projects..." />
+        <div class="projects limited"></div>
+        <button id="toggleProjects">Load More</button>
     </section>
-    
+
+    <!-- 3D PRINTS SECTION -->
     <section id="prints">
-        <h2>3D Printing Projects</h2>
+        <h2>
+            <img src="images/mrm3dprints.png" alt="MrM3DPrints Logo" class="section-logo" />
+            3D Printing Projects
+        </h2>
         <div class="prints"></div>
-        <p>See more on my <a href="http://mrm3dprints.etsy.com" target="_blank">Etsy Shop</a></p>
+        <p>
+            See more on my
+            <a href="http://mrm3dprints.etsy.com" target="_blank">Etsy Shop</a>
+        </p>
     </section>
-    
+
+    <!-- CONTACT -->
     <footer id="contact">
-        <h3>Contact Me</h3>
+        <h3>📩 Contact Me</h3>
         <p>Email: <a href="mailto:mrmwebdev@gmail.com">mrmwebdev@gmail.com</a></p>
     </footer>
 
     <script src="script.js"></script>
-
 </body>
+
 </html>
